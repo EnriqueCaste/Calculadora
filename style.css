@@ -1,123 +1,208 @@
-/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e1e;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .calculator {
-    background-color: #2d2d2d;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    width: 300px;
-  }
-  
-  #display {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 100%;
-    height: 60px;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 2rem;
-    text-align: right;
-    background-color: #111;
-    color: #ffffff;
-  }
-  
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  
-  button {
-    padding: 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
-    background-color: #444;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #666;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  #equals{
-    background-color: #08b811;
-  }
-  
-  #clear {
-    grid-column: span 4;
-    background-color: #c0392b;
-  }
-  
-  #clear:hover {
-    background-color: #e74c3c;
-  }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  #back {
-    grid-column: span 2;
-    background-color: #c0392b;
-  }
-  #back:hover {
-    grid-column: span 2;
-    background-color: #e74c3c;
-  }
+.calculator {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  width: 300px;
+  z-index: 2
 
-  .mode-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-body.white-mode{
+}
+
+#display {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 2rem;
+  text-align: right;
+  background-color: #111;
+  color: #ffffff;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+button:focus {
+  outline: none;
+}
+#equals {
+  background-color: #08b811;
+}
+
+#clear {
+  grid-column: span 4;
+  background-color: #c0392b;
+}
+
+#clear:hover {
+  background-color: #e74c3c;
+}
+
+#back {
+  grid-column: span 2;
+  background-color: #c0392b;
+}
+
+#back:hover {
+  background-color: #e74c3c;
+}
+
+.mode-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+body.white-mode {
   background-color: #ffffff;
+}
 
+.scientific-btn {
+  position: absolute;
+  top: 673px;
+  left: 525px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 1
+}
+
+
+#calculadoraCientifica {
+  position: relative;
+  background-color: #2d2d2d;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  width: 400px;
+  display: grid;
+}
+
+
+#history-panel {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20px;
+  top: 20px; 
+  right: 20px; 
+  width: 300px; 
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: #2d2d2d;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  padding: 15px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.history-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none; 
 }
 
 .history-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.history-panel {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 10px;
-  padding: 30px;
-  overflow-y: auto;
-  border-radius: 8px;
-  background-color: #2d2d2d;
-}
-.history-panel.hidden {
-  display: none;
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #444;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
 }
 
-.history-panel h3 {
-  margin-top: 0;
+.history-header h3 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 1.4rem;
+
+
+}
+
+#clear-history {
+  border: none;
+  font-size: 1.2rem;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: transparent;
+
+}
+
+#clear-history:hover {
+  background-color: #666;
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-list li {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  background-color: #4f4e4e;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  word-break: break-all;
+  transition: background-color 0.2s;
 }
 

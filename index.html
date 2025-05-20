@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -41,16 +41,43 @@
         </div>
     </div>
 
-    <button id="toggle-history" class="history-btn" data-ignore="true">📱</button>
-    
-    <div id="history-panel" class="history-panel ">
-        <h3>Historial</h3>
-        <ul id="history-list"></ul>
+    <div id="calculadoraCientifica" style="display:none;">
+        <button>sin</button>
+        <button>log</button>
+        <button>tan</button>
+
+        <button>x²</button>
+        <button>√x</button>
+        <button>x^y</button>
+
+        <button>log(x)</button>
+        <button>ln(x)</button>
+        <button>e^x</button>
+
+        <button>π</button>
+        <button>e</button>
+
+        <button>1/x</button>
+        <button>|x|</button>
+        <button>!</button>        
     </div>
 
-    <button id="toggle-mode" class="mode-btn" data-ignore="true">🌙</button>
+    <button id="toggle-history" class="history-btn" data-ignore="true">📱</button>
+    <button id="toggleCientifica" class="scientific-btn" data-ignore="true"> Cientifica </button>
+    
+    <div id="history-panel" class="history-hidden">
+        <div class="history-header">
+            <h3>Historial</h3>
+            <button id="clear-history" class="clear-btn" data-ignore="true">🗑️</button>
+        </div>
+        <ul id="history-list"></ul>    
+    </div>
+
+    <button id="toggle-mode" class="mode-btn" data-ignore="true">☀️</button>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs/lib/browser/math.min.js"></script>
+
 
 </body>
 </html>
