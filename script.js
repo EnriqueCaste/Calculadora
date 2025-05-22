@@ -1,8 +1,10 @@
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
 
-/*-----Raton-------*/
 
+/*-------Calculadora-------*/
+
+/*-----Raton-------*/
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -91,40 +93,8 @@ document.addEventListener('keydown', (e)=>{
     }
 })
 
-/*------Modo Cientifico------*/
-
-const toggleCientificaBtn = document.getElementById("toggleCientifica");
-const panelCientifico = document.getElementById("calculadoraCientifica");
-
-toggleCientificaBtn.addEventListener("click", () => {
-  const visible = panelCientifico.style.display === "block";
-  panelCientifico.style.display = visible ? "none" : "block";
-  toggleCientificaBtn.textContent = visible ? "Científica" : "Básica";
-});
-
-
-
-/*------Modo Claro y Oscuro------*/
-
-
-const toggleModeBtn = document.getElementById("toggle-mode")
-
-toggleModeBtn.addEventListener("click", ()=>{
-  document.body.classList.toggle("white-mode")
-  toggleModeBtn.textContent = document.body.classList.contains("white-mode") ? "🌙" : "☀️";
-})
 
 /*-------Historial-------*/
-
-/*--BtnHistorial--*/
-
-const toggleHistoryBtn = document.getElementById("toggle-history")
-const historyPanel = document.getElementById("history-panel")
-
-toggleHistoryBtn.addEventListener("click", () => {
-  historyPanel.classList.toggle("history-hidden");
-  toggleHistoryBtn.textContent = historyPanel.classList.contains("history-hidden") ? "📱" : "❌";
-});
 
 /*--BtnBorrarHistorial--*/
 
@@ -136,7 +106,7 @@ cleanHistoryBtn.addEventListener("click", () =>{
   renderizarHistorial();
 })
 
-/*--MostrarHistorial--*/
+/*--AgregarAlHistorial--*/
 
 function agregarAlHistorial(operacion, resultado) {
   const entrada = `${operacion} = ${resultado}`;
@@ -167,11 +137,47 @@ function renderizarHistorial() {
   });
 }
 
-/*--RecuperarHistorial--*/
-
 const historialGuardado = localStorage.getItem("calculatorHistory");
 
 if (historialGuardado) {
   history = JSON.parse(historialGuardado);
   renderizarHistorial();
 }
+
+
+/*-------SideBar-------*/
+
+
+/*------Theme------*/
+
+const toggleModeBtn = document.getElementById("toggle-theme")
+
+toggleModeBtn.addEventListener("click", ()=>{
+  document.body.classList.toggle("white-mode")
+  toggleModeBtn.textContent = document.body.classList.contains("white-mode") ? "Oscuro" : "Claro";
+})
+
+/*------Modo Cientifico------*/
+
+const toggleScientificBtn = document.getElementById("toggle-scientific");
+const scientificPanel = document.getElementById("panelCientifico");
+
+toggleScientificBtn.addEventListener("click", () => {
+  scientificPanel.classList.toggle("panelCientifico-hidden"); 
+  toggleScientificBtn.textContent = scientificPanel.classList.contains("panelCientifico-hidden") ? "Cientifica" : "Basica";
+});
+
+
+/*--BtnHistorial--*/
+
+const toggleHistoryBtn = document.getElementById("toggle-history")
+const historyPanel = document.getElementById("history-panel")
+
+toggleHistoryBtn.addEventListener("click", () => {
+  historyPanel.classList.toggle("history-hidden");
+  toggleHistoryBtn.textContent = historyPanel.classList.contains("history-hidden") ? "Mostrar" : "Ocultar";
+});
+
+
+
+

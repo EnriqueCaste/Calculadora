@@ -7,74 +7,76 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
 
-        <div class="buttons">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button id="equals">=</button>
+    <div class="sidebar">
+            <button id="toggle-theme" data-ignore="true"> Claro</button>
+            <button id="toggle-history" data-ignore="true"> Historial</button>
+            <button id="toggle-scientific" data-ignore="true">Científica</button>
+            <button id="bot-ai" data-ignore="true" disabled> IA</button>
+    </div>
 
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>*</button>
+    <div class="main">
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button id="equals">=</button>
 
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>/</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>*</button>
 
-            <button>0</button>
-            <button>.</button>
-            <button>+</button>
-            <button>-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>/</button>
 
-            <button id="open-paren">(</button>
-            <button id="close-paren">)</button>
-            <button id="back">←</button>
+                <button>0</button>
+                <button>.</button>
+                <button>+</button>
+                <button>-</button>
 
-         
-            <button id="clear">C</button>
+                <button id="open-paren">(</button>
+                <button id="close-paren">)</button>
+                <button id="back">←</button>
 
+                <button id="clear">C</button>
+
+            </div>
+        </div>
+        <div id="panelCientifico" class="panelCientifico-hidden">
+            <button>sin</button>
+            <button>log</button>
+            <button>tan</button>
+
+            <button>x²</button>
+            <button>√x</button>
+            <button>x^y</button>
+
+            <button>log(x)</button>
+            <button>ln(x)</button>
+            <button>e^x</button>
+
+            <button>π</button>
+            <button>e</button>
+
+            <button>1/x</button>
+            <button>|x|</button>
+            <button>!</button>       
+        </div>
+
+        <div id="history-panel" class="history-hidden">
+            <div class="history-header">
+                <h3>Historial</h3>
+                <button id="clear-history" data-ignore="true">🗑️</button>
+            </div>
+            <ul id="history-list"></ul>    
         </div>
     </div>
-
-    <div id="calculadoraCientifica" style="display:none;">
-        <button>sin</button>
-        <button>log</button>
-        <button>tan</button>
-
-        <button>x²</button>
-        <button>√x</button>
-        <button>x^y</button>
-
-        <button>log(x)</button>
-        <button>ln(x)</button>
-        <button>e^x</button>
-
-        <button>π</button>
-        <button>e</button>
-
-        <button>1/x</button>
-        <button>|x|</button>
-        <button>!</button>        
-    </div>
-
-    <button id="toggle-history" class="history-btn" data-ignore="true">📱</button>
-    <button id="toggleCientifica" class="scientific-btn" data-ignore="true"> Cientifica </button>
     
-    <div id="history-panel" class="history-hidden">
-        <div class="history-header">
-            <h3>Historial</h3>
-            <button id="clear-history" class="clear-btn" data-ignore="true">🗑️</button>
-        </div>
-        <ul id="history-list"></ul>    
-    </div>
-
-    <button id="toggle-mode" class="mode-btn" data-ignore="true">☀️</button>
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjs/lib/browser/math.min.js"></script>
 
