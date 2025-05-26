@@ -1,8 +1,7 @@
+/*-------Calculadora-------*/
+
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
-
-
-/*-------Calculadora-------*/
 
 /*-----Raton-------*/
 
@@ -96,7 +95,7 @@ document.addEventListener('keydown', (e)=>{
 
 /*-------Historial-------*/
 
-/*--BtnBorrarHistorial--*/
+/*--Boton Borrar Historial--*/
 
 const cleanHistoryBtn = document.getElementById("clear-history")
 
@@ -106,7 +105,7 @@ cleanHistoryBtn.addEventListener("click", () =>{
   renderizarHistorial();
 })
 
-/*--AgregarAlHistorial--*/
+/*--Agregar Al Historial--*/
 
 function agregarAlHistorial(operacion, resultado) {
   const entrada = `${operacion} = ${resultado}`;
@@ -118,11 +117,9 @@ function agregarAlHistorial(operacion, resultado) {
 
   localStorage.setItem("calculatorHistory", JSON.stringify(history));
   renderizarHistorial();
-
-  
 }
 
-/*--MemoriaHistorial--*/
+/*--Memoria Historial--*/
 
 const historyList = document.getElementById("history-list")
 let history = []
@@ -147,8 +144,7 @@ if (historialGuardado) {
 
 /*-------SideBar-------*/
 
-
-/*------Theme------*/
+/*------Boton Theme------*/
 
 const toggleModeBtn = document.getElementById("toggle-theme")
 
@@ -157,27 +153,23 @@ toggleModeBtn.addEventListener("click", ()=>{
   toggleModeBtn.textContent = document.body.classList.contains("white-mode") ? "Oscuro" : "Claro";
 })
 
-/*------Modo Cientifico------*/
+/*------Boton Cientifico------*/
 
-const toggleScientificBtn = document.getElementById("toggle-scientific");
-const scientificPanel = document.getElementById("panelCientifico");
+const toggleScientificBtn = document.getElementById("toggle-Panel");
+const scientificPanel = document.getElementById("panel");
 
 toggleScientificBtn.addEventListener("click", () => {
-  scientificPanel.classList.toggle("panelCientifico-hidden"); 
-  toggleScientificBtn.textContent = scientificPanel.classList.contains("panelCientifico-hidden") ? "Cientifica" : "Basica";
+  scientificPanel.classList.toggle("panel-hidden"); 
+  toggleScientificBtn.textContent = scientificPanel.classList.contains("panel-hidden") ? "Cientifica" : "Basica";
 });
 
-
-/*--BtnHistorial--*/
+/*--Boton Historial--*/
 
 const toggleHistoryBtn = document.getElementById("toggle-history")
-const historyPanel = document.getElementById("history-panel")
+const historyPanel = document.getElementById("history")
 
 toggleHistoryBtn.addEventListener("click", () => {
   historyPanel.classList.toggle("history-hidden");
   toggleHistoryBtn.textContent = historyPanel.classList.contains("history-hidden") ? "Mostrar" : "Ocultar";
 });
-
-
-
 
