@@ -150,7 +150,7 @@ const toggleModeBtn = document.getElementById("toggle-theme")
 
 toggleModeBtn.addEventListener("click", ()=>{
   document.body.classList.toggle("white-mode")
-  toggleModeBtn.textContent = document.body.classList.contains("white-mode") ? "Oscuro" : "Claro";
+  toggleModeBtn.textContent = document.body.classList.contains("white-mode") ? "Dark" : "Light";
 })
 
 /*------Boton Cientifico------*/
@@ -160,7 +160,7 @@ const scientificPanel = document.getElementById("panel");
 
 toggleScientificBtn.addEventListener("click", () => {
   scientificPanel.classList.toggle("panel-hidden"); 
-  toggleScientificBtn.textContent = scientificPanel.classList.contains("panel-hidden") ? "Cientifica" : "Basica";
+  toggleScientificBtn.textContent = scientificPanel.classList.contains("panel-hidden") ? "Scientific " : "Basic";
 });
 
 /*--Boton Historial--*/
@@ -170,6 +170,6 @@ const historyPanel = document.getElementById("history")
 
 toggleHistoryBtn.addEventListener("click", () => {
   historyPanel.classList.toggle("history-hidden");
-  toggleHistoryBtn.textContent = historyPanel.classList.contains("history-hidden") ? "Mostrar" : "Ocultar";
+  toggleHistoryBtn.textContent = historyPanel.classList.contains("history-hidden") ? "Show" : "Hide";
 });
 
